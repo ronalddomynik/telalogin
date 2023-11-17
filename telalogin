@@ -1,0 +1,18 @@
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+
+public class LoginScreenTest {
+
+    @Test
+    public void testLoginSuccess() {
+        LoginScreen loginScreen = new LoginScreen();
+        assertTrue(loginScreen.authenticate("john", "password"));
+    }
+
+    @Test
+    public void testLoginFailure() {
+        LoginScreen loginScreen = new LoginScreen();
+        assertFalse(loginScreen.authenticate("john1", "password"));
+
+    }
