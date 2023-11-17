@@ -16,3 +16,40 @@ public class LoginScreenTest {
         assertFalse(loginScreen.authenticate("john1", "password"));
 
     }
+import java.util.HashMap;
+import java.util.Map;
+
+public class LoginScreen {
+    private Map<String, String> userDatabase;
+
+    public LoginScreen() {
+        userDatabase = new HashMap<>();
+        userDatabase.put("john", "password");
+    }
+
+    public boolean authenticate(String username, String password) {
+        return userDatabase.containsKey(username) && userDatabase.get(username).equals(password);
+    }
+/**
+ * Classe para a tela de login.
+ */
+public class LoginScreen {
+    private Map<String, String> userDatabase;
+
+    /**
+     * Construtor padrão. Inicializa o banco de dados de usuários.
+     */
+    public LoginScreen() {
+        userDatabase = new HashMap<>();
+        userDatabase.put("john", "password");
+    }
+
+    /**
+     * Autentica um usuário.
+     *
+     * @param username O nome de usuário.
+     * @param password A senha do usuário.
+     * @return True se a autenticação for bem-sucedida, false caso contrário.
+     */
+    public boolean authenticate(String username, String password) {
+        return userDatabase.containsKey(username) && userDatabase.get(username).equals(password);
